@@ -1,177 +1,60 @@
-```css
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap');
-
-/* ==============================
-   COLOR PALETTE
-   ============================== */
-
-:root {
-    --primary: #1e3a5f;
-    --secondary: #4f83cc;
-    --background: #f4f7fb;
-    --white: #ffffff;
-    --text: #222222;
-    --light-blue: #e8f1fb;
-}
-
-
-/* ==============================
-   BASIC STYLING
-   ============================== */
+/* Basic page setup */
 
 * {
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--background);
-    color: var(--text);
-    font-family: 'Open Sans', sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #222;
 }
 
-h1,
-h2,
-h3 {
-    font-family: 'Poppins', sans-serif;
+/* Header */
+
+header {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 24px;
 }
 
-h1 {
-    margin: 0;
-    color: var(--white);
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
 }
 
-h2 {
-    margin-top: 0;
-    color: var(--primary);
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px;
 }
 
-h3 {
-    color: var(--primary);
-}
+/* Main content */
 
-p {
-    margin-bottom: 16px;
-}
-
-a {
-    color: var(--secondary);
-}
-
-
-/* ==============================
-   CONTAINER
-   ============================== */
-
-.container {
+main {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-
-/* ==============================
-   HEADER
-   ============================== */
-
-header {
-    background-color: var(--primary);
-    padding: 24px 0;
-}
-
-header .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-}
-
-
-/* ==============================
-   NAVIGATION - FLEXBOX
-   ============================== */
-
-nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 24px;
-}
-
-nav a {
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-nav a:hover {
-    color: var(--light-blue);
-}
-
-
-/* ==============================
-   MAIN CONTENT
-   ============================== */
-
-main {
-    padding: 48px 0;
-}
-
 section {
-    margin-bottom: 48px;
+    margin: 32px 0;
 }
 
-
-/* ==============================
-   HERO SECTION
-   ============================== */
-
-#welcome {
-    background-color: var(--white);
-    padding: 48px;
-    border-radius: 8px;
+.hero {
     text-align: center;
-}
-
-#welcome h2 {
-    font-size: 36px;
-}
-
-#welcome p {
-    max-width: 700px;
-    margin: 0 auto 24px;
-}
-
-
-/* ==============================
-   BUTTON
-   ============================== */
-
-.button {
-    display: inline-block;
-    padding: 16px 24px;
-    background-color: var(--secondary);
-    color: var(--white);
-    text-decoration: none;
+    padding: 32px;
+    background-color: white;
     border-radius: 8px;
-    font-weight: 600;
 }
 
-.button:hover {
-    background-color: var(--primary);
-}
-
-
-/* ==============================
-   SKILLS - CSS GRID
-   ============================== */
+/* Multi-column Grid layout */
 
 .skills-grid {
     display: grid;
@@ -179,156 +62,75 @@ section {
     gap: 24px;
 }
 
-.card {
-    background-color: var(--white);
-    padding: 24px;
-    border-radius: 8px;
-    border-top: 4px solid var(--secondary);
-}
-
-
-/* ==============================
-   PROJECTS - CSS GRID
-   ============================== */
-
-.projects-grid {
+.goals-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
 }
 
-.project-card {
-    background-color: var(--white);
+/* Cards */
+
+.card {
+    background-color: white;
     padding: 24px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #ddd;
 }
 
-.tag {
-    display: inline-block;
-    margin-top: 16px;
-    padding: 8px 16px;
-    background-color: var(--light-blue);
-    color: var(--primary);
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-
-/* ==============================
-   CONTACT
-   ============================== */
-
-#contact {
-    background-color: var(--white);
-    padding: 32px;
-    border-radius: 8px;
-}
-
-.contact-list {
-    padding-left: 24px;
-}
-
-
-/* ==============================
-   FOOTER
-   ============================== */
+/* Footer */
 
 footer {
-    padding: 24px;
-    background-color: var(--primary);
-    color: var(--white);
     text-align: center;
+    padding: 24px;
+    background-color: #222;
+    color: white;
+    margin-top: 40px;
 }
 
-footer p {
-    margin: 0;
-}
-
-
-/* ==============================
-   TABLET - MEDIA QUERY #1
-   ============================== */
+/* TABLET */
 
 @media (max-width: 768px) {
 
-    header .container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    nav ul {
-        gap: 16px;
-    }
-
-    .skills-grid,
-    .projects-grid {
+    .skills-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    #welcome {
-        padding: 32px;
+    .goals-grid {
+        grid-template-columns: 1fr;
     }
 
-    #welcome h2 {
-        font-size: 30px;
+    nav {
+        gap: 12px;
     }
 }
 
-
-/* ==============================
-   MOBILE - MEDIA QUERY #2
-   ============================== */
+/* MOBILE */
 
 @media (max-width: 480px) {
 
-    .container {
+    main {
         width: 92%;
     }
 
-    header {
-        padding: 16px 0;
+    .skills-grid {
+        grid-template-columns: 1fr;
     }
 
-    header .container {
-        gap: 16px;
+    .goals-grid {
+        grid-template-columns: 1fr;
     }
 
-    nav ul {
+    .hero {
+        padding: 20px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    nav {
         flex-direction: column;
         align-items: center;
         gap: 8px;
     }
-
-    main {
-        padding: 32px 0;
-    }
-
-    section {
-        margin-bottom: 32px;
-    }
-
-    .skills-grid,
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    #welcome {
-        padding: 24px;
-    }
-
-    #welcome h2 {
-        font-size: 26px;
-    }
-
-    #contact {
-        padding: 24px;
-    }
-
-    .card,
-    .project-card {
-        padding: 24px;
-    }
 }
-```
